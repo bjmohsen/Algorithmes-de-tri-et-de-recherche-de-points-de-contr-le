@@ -1,0 +1,17 @@
+ALGORITHM trie_insert
+VAR
+    t : ARRAY_OF INTEGER;
+    i , j , c :INTEGER;
+BEGIN
+    FOR i FROM 0 TO lengh.t -1 STEP 1  DO
+        c := t[i];
+        j := i;
+
+        /*parti tier de tableau*/
+            WHILE (j>0 and t[j-1]>c) DO
+                t[j]:= t[j-1]; /* decaler l'elemnet*/
+                j:=j-1; /* passe un rang*/
+            END_WHILE
+        t[j]:=c;    
+    END_FOR
+END
